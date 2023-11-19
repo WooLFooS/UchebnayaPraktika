@@ -35,7 +35,7 @@ namespace UchebnayaPraktikaNiyaz.Pages
             {
                 App.isAdmin = true;
                 MessageBox.Show("Good Morning, Admin");
-                Navigation.NextPage(new PageComponent("Студент", new StudentPage()));
+                Navigation.NextPage(new PageComponent("Администраторская", new AdminPage()));
 
             }
             else if(std != null)

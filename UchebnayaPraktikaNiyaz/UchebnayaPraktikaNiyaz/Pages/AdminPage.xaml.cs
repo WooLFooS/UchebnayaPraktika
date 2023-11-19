@@ -16,14 +16,13 @@ using System.Windows.Shapes;
 namespace UchebnayaPraktikaNiyaz.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для StudentPage.xaml
+    /// Логика взаимодействия для AdminPage.xaml
     /// </summary>
-    public partial class StudentPage : Page
+    public partial class AdminPage : Page
     {
-        public StudentPage()
+        public AdminPage()
         {
             InitializeComponent();
-            StudentList.ItemsSource = App.db.Examen.ToList();
         }
     }
 }

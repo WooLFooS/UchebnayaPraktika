@@ -9,6 +9,18 @@
       Title="StudentPage">
 
     <Grid>
-        
+        <ListView x:Name="StudentList" ScrollViewer.VerticalScrollBarVisibility="Visible">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn DisplayMemberBinding="{Binding Id_Student}" Header="ID Студента" Width="100"></GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Student.Surname_Student}" Header="ФИО Студента" Width="200"></GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Subject.Name_Subject}" Header="Предмет" Width="200"></GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Mark}" Header="Оценка" Width="100"></GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Date_Examen}" Header="Дата экзамена" Width="150"></GridViewColumn>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Page>
