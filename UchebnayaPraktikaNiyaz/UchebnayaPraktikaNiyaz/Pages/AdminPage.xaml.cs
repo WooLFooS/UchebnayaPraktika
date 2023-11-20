@@ -38,12 +38,12 @@ namespace UchebnayaPraktikaNiyaz.Pages
 
         private void EmployeeBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            Navigation.NextPage(new PageComponent("Сотрудники", new EmployeePage()));
         }
 
         private void DisciplineBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            Navigation.NextPage(new PageComponent("Дисциплина", new DisciplinePage()));
         }
     }
 }

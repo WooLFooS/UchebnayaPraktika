@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UchebnayaPraktikaNiyaz.Bases;
 
 namespace UchebnayaPraktikaNiyaz.Pages
 {
@@ -23,26 +24,53 @@ namespace UchebnayaPraktikaNiyaz.Pages
         public EmployeePage()
         {
             InitializeComponent();
-            EmployeeP.ItemsSource = App.db.Employee.ToList();
+            EmployeeList.ItemsSource = App.db.Employee.ToList();
             if (!App.isAdmin)
             {
                 AddBtn.Visibility = Visibility.Hidden;
             }
+
         }
 
+
+        private void Refresh()
+        {
+            IEnumerable<Employee> SortedEmployee = App.db.Employee;
+            if (SortList.SelectedIndex == 0)
+            {
+                SortedEmployee = SortedEmployee.OrderBy(x => x.Salary);
+            }
+            else if (SortList.SelectedIndex == 1)
+            {
+                SortedEmployee = SortedEmployee.OrderByDescending(x => x.Salary);
+            }
+
+            if (FiltrList.SelectedIndex == 0)
+                SortedEmployee = SortedEmployee.Where(x => x.Salary >= 30000);
+            if (FiltrList.SelectedIndex == 1)
+                SortedEmployee = SortedEmployee.Where(x => x.Salary < 30000);
+
+
+            if (SearchTb.Text != null)
+            {
+                SortedEmployee = SortedEmployee.Where(x => x.Surname.ToLower().Contains(SearchTb.Text.ToLower()));
+            }
+
+            EmployeeList.ItemsSource = SortedEmployee.ToList();
+        }
         private void SortList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            Refresh();
         }
 
         private void FiltrList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            Refresh();
         }
 
         private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            Refresh();
         }
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)

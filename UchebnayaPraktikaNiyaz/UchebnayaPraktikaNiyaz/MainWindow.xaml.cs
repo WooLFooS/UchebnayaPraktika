@@ -27,6 +27,7 @@ namespace UchebnayaPraktikaNiyaz
             InitializeComponent();
             Navigation.mainWindow = this;
             Navigation.NextPage(new PageComponent("Авторизация", new AuthorizatePage()));
+
         }
 
         private void ExitBtn_Click(object sender, RoutedEventArgs e)
@@ -39,5 +40,7 @@ namespace UchebnayaPraktikaNiyaz
         {
             Navigation.BackPage();
         }
+
     }
 }
+

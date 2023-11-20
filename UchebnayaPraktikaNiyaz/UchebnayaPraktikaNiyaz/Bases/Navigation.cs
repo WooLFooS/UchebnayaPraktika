@@ -16,13 +16,14 @@ namespace UchebnayaPraktikaNiyaz.Bases
         {
             App.isAdmin = false;
             App.isStudent = false;
+            App.isPrepodovatel = false;
             components.Clear();
         }
         private static void Update(PageComponent pageComponent)
         {
             mainWindow.NameLb.Content = pageComponent.Title;
             mainWindow.ExitBtn.Visibility = components.Count() > 1 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
-            mainWindow.BackBtn.Visibility = App.isAdmin || App.isStudent ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+            mainWindow.BackBtn.Visibility = App.isAdmin || App.isStudent || App.isPrepodovatel ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
             
             mainWindow.MainFrame.Navigate(pageComponent.Page);
         }
@@ -30,7 +31,6 @@ namespace UchebnayaPraktikaNiyaz.Bases
         {
             components.Add(pageComponent);
             Update(pageComponent);
-
         }
         public static void BackPage()
         {

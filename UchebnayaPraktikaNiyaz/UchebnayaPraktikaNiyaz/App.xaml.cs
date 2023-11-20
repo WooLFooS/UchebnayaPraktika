@@ -7,6 +7,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using System.Windows;
 using UchebnayaPraktikaNiyaz.Bases;
+using UchebnayaPraktikaNiyaz.Pages;
 
 namespace UchebnayaPraktikaNiyaz
 {
@@ -19,5 +20,6 @@ namespace UchebnayaPraktikaNiyaz
         public static bool isAdmin = false;
         public static bool isStudent = false;
         public static bool isPrepodovatel = false;
+        public static StudentPage sp = new StudentPage();
     }
 }

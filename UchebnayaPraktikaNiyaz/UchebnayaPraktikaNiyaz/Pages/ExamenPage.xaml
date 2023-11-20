@@ -38,15 +38,15 @@
             <Button x:Name="AddBtn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="30" Margin="30,0,0,0" Content="Добавить" Click="AddBtn_Click"></Button>
         </StackPanel>
         <StackPanel Grid.Row="1">
-            <ListView Width="800" x:Name="ExamenP" Height="376" ScrollViewer.VerticalScrollBarVisibility="Visible">
+            <ListView Background="#F7F7F7" x:Name="ExamenList" Height="350" ScrollViewer.VerticalScrollBarVisibility="Visible">
                 <ListView.View>
                     <GridView>
                         <GridView.Columns>
-                            <GridViewColumn Header="Дата" DisplayMemberBinding="{Binding Date_Exam}" x:Name="DateColumn" Width="70"></GridViewColumn>
-                            <GridViewColumn Header="Дисциплина" DisplayMemberBinding="{Binding Subject.Name_Subject}" x:Name="SubjectColumn" Width="130"></GridViewColumn>
-                            <GridViewColumn Header="Преподаватель" DisplayMemberBinding="{Binding Employee.Surname}" x:Name="TeacherColumn" Width="130"></GridViewColumn>
-                            <GridViewColumn Header="Аудитория" DisplayMemberBinding="{Binding Auditory}" x:Name="AuditoryColumn" Width="130"></GridViewColumn>
-                            <GridViewColumn Header="Студент" DisplayMemberBinding="{Binding Student.Surname_Student}" x:Name="StudentColumn" Width="130"></GridViewColumn>
+                            <GridViewColumn Header="Дата" DisplayMemberBinding="{Binding Date_Examen}" x:Name="DateColumn" Width="200"></GridViewColumn>
+                            <GridViewColumn Header="Дисциплина" DisplayMemberBinding="{Binding Subject.Name_Subject}" x:Name="SubjectColumn" Width="160"></GridViewColumn>
+                            <GridViewColumn Header="Преподаватель" DisplayMemberBinding="{Binding Employee.Surname}" x:Name="TeacherColumn" Width="150"></GridViewColumn>
+                            <GridViewColumn Header="Аудитория" DisplayMemberBinding="{Binding Auditory}" x:Name="AuditoryColumn" Width="150"></GridViewColumn>
+                            <GridViewColumn Header="Студент" DisplayMemberBinding="{Binding Student.Surname_Student}" x:Name="StudentColumn" Width="170"></GridViewColumn>
                             <GridViewColumn Header="Оценка" DisplayMemberBinding="{Binding Mark}" x:Name="MarkColumn" Width="130"></GridViewColumn>
                         </GridView.Columns>
                     </GridView>

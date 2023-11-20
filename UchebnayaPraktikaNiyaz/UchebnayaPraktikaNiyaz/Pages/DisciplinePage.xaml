@@ -36,15 +36,15 @@
             <Button x:Name="AddBtn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="30" Margin="30,0,0,0" Content="Добавить" Click="AddBtn_Click"></Button>
         </StackPanel>
         <StackPanel  Grid.Row="1">
-            <ListView Width="800" x:Name="DisciplineP" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="376">
+            <ListView Background="#F7F7F7" x:Name="DisciplineList" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="350">
                 <ListView.View>
                     <GridView>
                         <GridView.Columns>
-                            <GridViewColumn Header="№" DisplayMemberBinding="{Binding Subject.Id_Subject }" x:Name="IdColumn" Width="100"></GridViewColumn>
-                            <GridViewColumn Header="Факультет" DisplayMemberBinding="{Binding Faculty.Name_Faculty}" x:Name="FacultyColumn" Width="165"></GridViewColumn>
-                            <GridViewColumn Header="Кафедра" DisplayMemberBinding="{Binding  Lectern.Name_Lectern}" x:Name="KafedraColumn" Width="150"></GridViewColumn>
-                            <GridViewColumn Header="Дисциплина" DisplayMemberBinding="{Binding Subject.Name_Subject}" x:Name="TeacherColumn" Width="150"></GridViewColumn>
-                            <GridViewColumn Header="Объем" DisplayMemberBinding="{Binding Subject.Cize_Subject}" x:Name="EmplColumn" Width="150"></GridViewColumn>
+                            <GridViewColumn Header="№" DisplayMemberBinding="{Binding Id_Subject}" x:Name="IdColumn" Width="100"></GridViewColumn>
+                            <GridViewColumn Header="Факультет" DisplayMemberBinding="{Binding Lectern.Faculty.Name_Faculty}" x:Name="FacultyColumn" Width="270"></GridViewColumn>
+                            <GridViewColumn Header="Кафедра" DisplayMemberBinding="{Binding  Lectern.Name_Lectern}" x:Name="KafedraColumn" Width="270"></GridViewColumn>
+                            <GridViewColumn Header="Дисциплина" DisplayMemberBinding="{Binding Name_Subject}" x:Name="TeacherColumn" Width="180"></GridViewColumn>
+                            <GridViewColumn Header="Объем" DisplayMemberBinding="{Binding Cize_Subject}" x:Name="EmplColumn" Width="150"></GridViewColumn>
                         </GridView.Columns>
                     </GridView>
                 </ListView.View>
