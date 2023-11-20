@@ -9,6 +9,48 @@
       Title="EmployeePage">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <Label Content="Сорт" FontFamily="ArialBlack" FontSize="15" Width="55" Margin="10 0"/>
+                <ComboBox Width="120" x:Name="SortList" SelectionChanged="SortList_SelectionChanged">
+                    <ComboBoxItem Content="По возрастанию"/>
+                    <ComboBoxItem Content="По убыванию"/>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <Label Content="З/П" FontFamily="ArialBlack" FontSize="15" Width="44"/>
+                <ComboBox Width="120" x:Name="FiltrList" SelectionChanged="FiltrList_SelectionChanged">
+                    <ComboBoxItem Content="Больше 30.тыс"></ComboBoxItem>
+                    <ComboBoxItem Content="Меньше 30.тыс"></ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <Label Content="Поиск" FontFamily="ArialBlack" FontSize="15" Width="70"/>
+                <TextBox Width="120" x:Name="SearchTb" TextChanged="SearchTb_TextChanged"></TextBox>
+            </StackPanel>
+            <Button x:Name="AddBtn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="30" Margin="30,0,0,0" Content="Добавить" Click="AddBtn_Click"></Button>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <ListView Width="800" x:Name="EmployeeP" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="378">
+                <ListView.View>
+                    <GridView>
+                        <GridView.Columns>
+                            <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Employee.Id_Employee}" x:Name="IdColumn" Width="50"></GridViewColumn>
+                            <GridViewColumn Header="Преподаватель" DisplayMemberBinding="{Binding Employee.Surname}" x:Name="TeacherColumn" Width="120"></GridViewColumn>
+                            <GridViewColumn Header="Кафедра" DisplayMemberBinding="{Binding Lectern.Name_Lectern}" x:Name="KafedraColumn" Width="165"></GridViewColumn>
+                            <GridViewColumn Header="Должность" DisplayMemberBinding="{Binding Position.Position}" x:Name="PositionColumn" Width="120"></GridViewColumn>
+                            <GridViewColumn Header="Стаж" DisplayMemberBinding="{Binding Employee.Stage}" x:Name="EmplColumn" Width="120"></GridViewColumn>
+                            <GridViewColumn Header="Звание" DisplayMemberBinding="{Binding Degree.Degree}" x:Name="DegColumn" Width="120"></GridViewColumn>
+                            <GridViewColumn Header="Оклад" DisplayMemberBinding="{Binding Employee.Salary}" x:Name="SalaryColumn" Width="120"></GridViewColumn>
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
     </Grid>
 </Page>

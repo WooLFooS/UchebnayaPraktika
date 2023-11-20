@@ -33,9 +33,9 @@ namespace UchebnayaPraktikaNiyaz.Pages
             var std = App.db.Student.Where(x => x.Id_Student.ToString() == PasswordPb.Password).FirstOrDefault();
             if(emp != null)
             {
-                App.isAdmin = true;
-                MessageBox.Show("Good Morning, Admin");
-                Navigation.NextPage(new PageComponent("Администраторская", new AdminPage()));
+                App.isPrepodovatel = true;
+                MessageBox.Show("Good Morning, Teacher");
+                Navigation.NextPage(new PageComponent("Экзамены", new ExamenPage()));
 
             }
             else if(std != null)
@@ -43,6 +43,12 @@ namespace UchebnayaPraktikaNiyaz.Pages
                 App.isStudent = true;
                 MessageBox.Show("Good Morning, Student");
                 Navigation.NextPage(new PageComponent("Студент", new StudentPage()));
+            }
+            else if(PasswordPb.Password == "1718")
+            {
+                App.isAdmin = true;
+                MessageBox.Show("Good Morning, Admin");
+                Navigation.NextPage(new PageComponent("Админская", new AdminPage()));
             }
             else
             {

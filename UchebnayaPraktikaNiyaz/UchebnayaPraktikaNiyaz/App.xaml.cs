@@ -18,5 +18,6 @@ namespace UchebnayaPraktikaNiyaz
         public static UchebnayaPraktikaNiyazEntities db = new UchebnayaPraktikaNiyazEntities();
         public static bool isAdmin = false;
         public static bool isStudent = false;
+        public static bool isPrepodovatel = false;
     }
 }

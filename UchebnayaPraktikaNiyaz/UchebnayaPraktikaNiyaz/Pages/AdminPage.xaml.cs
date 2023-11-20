@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UchebnayaPraktikaNiyaz.Bases;
 
 namespace UchebnayaPraktikaNiyaz.Pages
 {
@@ -23,6 +24,26 @@ namespace UchebnayaPraktikaNiyaz.Pages
         public AdminPage()
         {
             InitializeComponent();
+        }
+
+        private void StudentBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.NextPage(new PageComponent("Студенты", new StudentPage()));
+        }
+
+        private void ExamBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.NextPage(new PageComponent("Экзамены", new ExamenPage()));
+        }
+
+        private void EmployeeBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DisciplineBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

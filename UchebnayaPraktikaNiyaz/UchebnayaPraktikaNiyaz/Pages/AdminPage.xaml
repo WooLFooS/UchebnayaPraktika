@@ -9,10 +9,14 @@
       Title="AdminPage">
 
     <Grid>
-        <StackPanel Orientation="Horizontal" Width="400" Height="400">
-            <Button Content="Экзамен" x:Name="ExamBtn"/>
-            <Button Content="Сотрудники" x:Name="EmployeeBtn"/>
-            <Button Content="Дисциплины" x:Name="DisciplineBtn"/>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+            <TextBlock HorizontalAlignment="Center" FontSize="20" FontFamily="ArialBlack">Списки</TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="StudentBtn" Width="90" Click="StudentBtn_Click">Студенты</Button>
+                <Button x:Name="ExamBtn" Width="90" Click="ExamBtn_Click">Экзамены</Button>
+                <Button x:Name="EmployeeBtn" Width="110" Click="EmployeeBtn_Click" >Сотрудники</Button>
+                <Button x:Name="DisciplineBtn" Width="110" Click="DisciplineBtn_Click">Дисциплины</Button>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Page>

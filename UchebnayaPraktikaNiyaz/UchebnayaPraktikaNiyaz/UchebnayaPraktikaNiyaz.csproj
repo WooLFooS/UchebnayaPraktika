@@ -85,7 +85,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\DisciplinePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\EmployeePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ExamenPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -101,8 +109,14 @@
     <Compile Include="Pages\AuthorizatePage.xaml.cs">
       <DependentUpon>AuthorizatePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\DisciplinePage.xaml.cs">
+      <DependentUpon>DisciplinePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\EmployeePage.xaml.cs">
       <DependentUpon>EmployeePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ExamenPage.xaml.cs">
+      <DependentUpon>ExamenPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\StudentPage.xaml.cs">
       <DependentUpon>StudentPage.xaml</DependentUpon>

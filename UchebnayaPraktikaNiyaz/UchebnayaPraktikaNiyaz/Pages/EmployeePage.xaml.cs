@@ -23,6 +23,31 @@ namespace UchebnayaPraktikaNiyaz.Pages
         public EmployeePage()
         {
             InitializeComponent();
+            EmployeeP.ItemsSource = App.db.Employee.ToList();
+            if (!App.isAdmin)
+            {
+                AddBtn.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void SortList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void FiltrList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

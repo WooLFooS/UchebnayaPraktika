@@ -16,21 +16,21 @@ using System.Windows.Shapes;
 namespace UchebnayaPraktikaNiyaz.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для StudentPage.xaml
+    /// Логика взаимодействия для ExamenPage.xaml
     /// </summary>
-    public partial class StudentPage : Page
+    public partial class ExamenPage : Page
     {
-        public StudentPage()
+        public ExamenPage()
         {
             InitializeComponent();
-            StudentList.ItemsSource = App.db.Examen.ToList();
-            if(!App.isAdmin)
+            ExamenP.ItemsSource = App.db.Examen.ToList();
+            if (!App.isAdmin)
             {
                 AddBtn.Visibility = Visibility.Hidden;
             }
+
         }
 
-       
         private void SortList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
