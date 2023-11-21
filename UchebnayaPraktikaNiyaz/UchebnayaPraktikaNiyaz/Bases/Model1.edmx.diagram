@@ -4,19 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b80626ab83fb40b1a9d4fb4a685d5b4b" Name="Diagram1">
-        <EntityTypeShape EntityType="UchebnayaPraktikaNiyaz1Model.Degree" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+      <Diagram DiagramId="d28c1cef20514042b2a2361bf6f895ce" Name="Diagram1" ZoomLevel="50">
         <EntityTypeShape EntityType="UchebnayaPraktikaNiyaz1Model.Employee" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
         <EntityTypeShape EntityType="UchebnayaPraktikaNiyaz1Model.Examen" Width="1.5" PointX="9.75" PointY="6.25" IsExpanded="true" />
         <EntityTypeShape EntityType="UchebnayaPraktikaNiyaz1Model.Faculty" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="UchebnayaPraktikaNiyaz1Model.Lectern" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchebnayaPraktikaNiyaz1Model.Position" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="UchebnayaPraktikaNiyaz1Model.Specs" Width="1.5" PointX="5.25" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="UchebnayaPraktikaNiyaz1Model.Student" Width="1.5" PointX="7.5" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="UchebnayaPraktikaNiyaz1Model.Subject" Width="1.5" PointX="7.5" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchebnayaPraktikaNiyaz1Model.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="UchebnayaPraktikaNiyaz1Model.FK_Position_Degree" ManuallyRouted="false" />
-        <AssociationConnector Association="UchebnayaPraktikaNiyaz1Model.FK_Employee_Position" ManuallyRouted="false" />
         <AssociationConnector Association="UchebnayaPraktikaNiyaz1Model.FK_Employee_To_Lectern" ManuallyRouted="false" />
         <AssociationConnector Association="UchebnayaPraktikaNiyaz1Model.FK_Exam_To_Employee" ManuallyRouted="false" />
         <AssociationConnector Association="UchebnayaPraktikaNiyaz1Model.FK_Exam_To_Student" ManuallyRouted="false" />
@@ -26,6 +21,11 @@
         <AssociationConnector Association="UchebnayaPraktikaNiyaz1Model.FK_Subject_To_Lectern" ManuallyRouted="false" />
         <AssociationConnector Association="UchebnayaPraktikaNiyaz1Model.FK_Student_To_Spec" ManuallyRouted="false" />
         <AssociationConnector Association="UchebnayaPraktikaNiyaz1Model.Request" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="UchebnayaPraktikaNiyaz1Model.Position" Width="1.5" PointX="3" PointY="0.875" />
+        <EntityTypeShape EntityType="UchebnayaPraktikaNiyaz1Model.sysdiagrams" Width="1.5" PointX="5.375" PointY="0.75" />
+        <AssociationConnector Association="UchebnayaPraktikaNiyaz1Model.FK_Employee_Position" />
+        <EntityTypeShape EntityType="UchebnayaPraktikaNiyaz1Model.Degree" Width="1.5" PointX="0.75" PointY="1.125" />
+        <AssociationConnector Association="UchebnayaPraktikaNiyaz1Model.FK_Position_Degree" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

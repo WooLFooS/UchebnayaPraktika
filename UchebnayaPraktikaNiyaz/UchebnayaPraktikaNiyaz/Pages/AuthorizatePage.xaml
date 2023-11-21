@@ -13,5 +13,13 @@
             <PasswordBox x:Name="PasswordPb" BorderThickness="3" BorderBrush="#3F4C6B" Width="100" Margin="30"></PasswordBox>
             <Button x:Name="EnterBtn" Content="ВОЙТИ" FontSize="25" Width="500" Height="70" Margin="0 0 0 0" Click="EnterBtn_Click"></Button>
         </StackPanel>
+        <StackPanel Background="#F7F7F7" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Button x:Name="createQrBtn" Content="Создать QR" Width="150" Height="50" Click="Button_Click"></Button>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image x:Name="imageQr" Height="200" Width="200" ></Image>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>

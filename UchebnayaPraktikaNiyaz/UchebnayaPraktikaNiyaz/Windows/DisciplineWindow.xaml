@@ -24,6 +24,6 @@
             <TextBox x:Name="ObemTb" Width="200" ></TextBox>
         </StackPanel>
         <Button x:Name="SaveBtn" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Width="150" Content="Сохранить" Click="SaveBtn_Click"></Button>
-
+        
     </Grid>
 </Window>

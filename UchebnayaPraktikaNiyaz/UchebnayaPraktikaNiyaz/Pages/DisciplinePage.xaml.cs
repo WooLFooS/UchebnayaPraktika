@@ -25,7 +25,7 @@ namespace UchebnayaPraktikaNiyaz.Pages
         public DisciplinePage()
         {
             InitializeComponent();
-            DisciplineList.ItemsSource = App.db.Subject.ToList();
+            Refresh();
         }
 
         private void Refresh()
@@ -56,7 +56,7 @@ namespace UchebnayaPraktikaNiyaz.Pages
                 SortedEmployee = SortedEmployee.Where(x => x.Name_Subject.ToLower().Contains(SearchTb.Text.ToLower()));
             }
 
-            DisciplineList.ItemsSource = SortedEmployee.ToList();
+            DisciplineList.ItemsSource = SortedEmployee.ToList().Where(x => x.IsDeleted != Convert.ToBoolean(1));
         }
 
         private void SortList_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -76,7 +76,21 @@ namespace UchebnayaPraktikaNiyaz.Pages
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            new DisciplineWindow().ShowDialog();
+            NavigationService.Navigate(new AddEditDisciplinePage(new Subject(), "add"));
+        }
+
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var discipline = (Subject)DisciplineList.SelectedItem;
+            discipline.IsDeleted = Convert.ToBoolean(1);
+            Refresh();
+            App.db.SaveChanges();
+        }
+
+        private void RedaktBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var discipline = (Subject)DisciplineList.SelectedItem;
+            NavigationService.Navigate(new AddEditDisciplinePage(discipline, "redact"));
         }
     }
 }

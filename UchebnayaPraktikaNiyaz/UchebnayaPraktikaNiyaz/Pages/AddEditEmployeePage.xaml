@@ -1,0 +1,37 @@
+﻿<Page x:Class="UchebnayaPraktikaNiyaz.Pages.AddEditEmployeePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UchebnayaPraktikaNiyaz.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEditEmployeePage">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Margin="0 10" HorizontalAlignment="Right" Orientation="Horizontal">
+                <Label>ФИО</Label>
+                <TextBox Width="200" Text="{Binding Surname}" x:Name="FioTb" Margin="10 0"></TextBox>
+            </StackPanel>
+            <StackPanel Margin="0 10" HorizontalAlignment="Right" Orientation="Horizontal">
+                <Label>Кафедра</Label>
+                <ComboBox Width="200" x:Name="LecternCb" Margin="10 0"></ComboBox>
+            </StackPanel>
+            
+            <StackPanel Margin="0 10" HorizontalAlignment="Right" Orientation="Horizontal">
+                <Label>Позиция</Label>
+                <ComboBox Width="200" x:Name="PositionCb" Margin="10 0"></ComboBox>
+            </StackPanel>
+            <StackPanel Margin="0 10" HorizontalAlignment="Right" Orientation="Horizontal">
+                <Label>Оклад</Label>
+                <TextBox Width="200" Text="{Binding Salary}" x:Name="SalaryTb" Margin="10 0"></TextBox>
+            </StackPanel>
+            <StackPanel Margin="0 10" HorizontalAlignment="Right" Orientation="Horizontal">
+                <Label>Стаж</Label>
+                <TextBox Width="200" Text="{Binding Stage}" x:Name="StageTb" Margin="10 0"></TextBox>
+            </StackPanel>
+            <Button Width="150" x:Name="SaveBtn" Margin="10" Click="SaveButt_Click">Сохранить</Button>
+        </StackPanel>
+    </Grid>
+</Page>

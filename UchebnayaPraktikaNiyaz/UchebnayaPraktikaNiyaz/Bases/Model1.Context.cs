@@ -13,10 +13,10 @@ namespace UchebnayaPraktikaNiyaz.Bases
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class UchebnayaPraktikaNiyaz1Entities : DbContext
+    public partial class UchebnayaPraktikaNiyaz1Entities1 : DbContext
     {
-        public UchebnayaPraktikaNiyaz1Entities()
-            : base("name=UchebnayaPraktikaNiyaz1Entities")
+        public UchebnayaPraktikaNiyaz1Entities1()
+            : base("name=UchebnayaPraktikaNiyaz1Entities1")
         {
         }
     
@@ -25,15 +25,15 @@ namespace UchebnayaPraktikaNiyaz.Bases
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Degree> Degree { get; set; }
         public virtual DbSet<Employee> Employee { get; set; }
         public virtual DbSet<Examen> Examen { get; set; }
         public virtual DbSet<Faculty> Faculty { get; set; }
         public virtual DbSet<Lectern> Lectern { get; set; }
-        public virtual DbSet<Position> Position { get; set; }
         public virtual DbSet<Specs> Specs { get; set; }
         public virtual DbSet<Student> Student { get; set; }
         public virtual DbSet<Subject> Subject { get; set; }
+        public virtual DbSet<Position> Position { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<Degree> Degree { get; set; }
     }
 }

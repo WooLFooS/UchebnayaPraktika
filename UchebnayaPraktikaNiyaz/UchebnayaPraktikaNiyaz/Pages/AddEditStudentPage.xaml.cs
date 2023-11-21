@@ -29,7 +29,14 @@ namespace UchebnayaPraktikaNiyaz.Pages
             student = _student;
             WhatToDo = _whatToDo;
             this.DataContext = student;
+            SpecCb.ItemsSource = App.db.Specs.ToList();
+            SpecCb.DisplayMemberPath = "Direction";
 
+            if (student.Id_Student > 0)
+            {
+                var sss = App.db.Specs.ToList().Where(x => x.Id_Spec == student.Id_Spec).First();
+                SpecCb.SelectedIndex = SpecCb.Items.IndexOf(sss);
+            }
         }
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)

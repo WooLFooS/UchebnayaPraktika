@@ -21,6 +21,7 @@ namespace UchebnayaPraktikaNiyaz.Bases
         public string Auditory { get; set; }
         public Nullable<int> Mark { get; set; }
         public int Id_Examen { get; set; }
+        public Nullable<bool> IsDeleted { get; set; }
     
         public virtual Employee Employee { get; set; }
         public virtual Student Student { get; set; }

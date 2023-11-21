@@ -1,0 +1,45 @@
+﻿<Page x:Class="UchebnayaPraktikaNiyaz.Pages.AddEditExamenPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UchebnayaPraktikaNiyaz.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEditExamenPage">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Margin="0 10" HorizontalAlignment="Right" Orientation="Horizontal">
+                <Label>Дата:</Label>
+                <DatePicker x:Name="DatePck" Width="200" Height="40" SelectedDate="{Binding Date_Examen}" Margin="10 0"></DatePicker>
+            </StackPanel>
+
+            <StackPanel Margin="0 10" HorizontalAlignment="Right" Orientation="Horizontal">
+                <Label>Предмет:</Label>
+                <ComboBox x:Name="SubjectCb" Width="200" Margin="10 0"></ComboBox>
+            </StackPanel>
+
+            <StackPanel Margin="0 10" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Label>Студент:</Label>
+                <ComboBox x:Name="StudentCb" Width="200" Margin="10 0"></ComboBox>
+            </StackPanel>
+
+            <StackPanel Margin="0 10" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Label>Преподаватель:</Label>
+                <ComboBox x:Name="TeacherCb" Width="200" Margin="10 0"></ComboBox>
+            </StackPanel>
+
+            <StackPanel Margin="0 10" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Label>Аудитория:</Label>
+                <TextBox x:Name="AuditoryTb" Width="200" Margin="10 0" Text="{Binding Auditory}"></TextBox>
+            </StackPanel>
+
+            <StackPanel Margin="0 10" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Label>Оценка:</Label>
+                <TextBox x:Name="MarkTb" Width="200" Margin="10 0" Text="{Binding Mark}"></TextBox>
+            </StackPanel>
+            <Button x:Name="SaveBtn" Margin="10" Width="150" Click="SaveBtn_Click">Сохранить</Button>
+        </StackPanel>
+    </Grid>
+</Page>

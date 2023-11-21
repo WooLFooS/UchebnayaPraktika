@@ -101,6 +101,8 @@ namespace UchebnayaPraktikaNiyaz.Pages
         private void RedaktBtn_Click(object sender, RoutedEventArgs e)
         {
             var student = (Student)StudentList.SelectedItem;
+            if (student == null) 
+                MessageBox.Show("Для редактирования выберите данные!");
             NavigationService.Navigate(new AddEditStudentPage(student, "redact"));
         }
     }

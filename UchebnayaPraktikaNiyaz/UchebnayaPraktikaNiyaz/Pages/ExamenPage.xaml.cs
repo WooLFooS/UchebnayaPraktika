@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +26,8 @@ namespace UchebnayaPraktikaNiyaz.Pages
         public ExamenPage()
         {
             InitializeComponent();
-            ExamenList.ItemsSource = App.db.Examen.ToList();
+            Refresh();
+            
 
         }
 
@@ -34,11 +36,11 @@ namespace UchebnayaPraktikaNiyaz.Pages
             IEnumerable<Examen> SortedExamen = App.db.Examen;
             if (SortList.SelectedIndex == 0)
             {
-                SortedExamen = SortedExamen.OrderBy(x => x.Mark);
+                SortedExamen = SortedExamen.OrderBy(x => x.Date_Examen);
             }
             else if (SortList.SelectedIndex == 1)
             {
-                SortedExamen = SortedExamen.OrderByDescending(x => x.Mark);
+                SortedExamen = SortedExamen.OrderByDescending(x => x.Date_Examen);
             }
 
             if (FiltrList.SelectedIndex == 0)
@@ -54,8 +56,9 @@ namespace UchebnayaPraktikaNiyaz.Pages
             {
                 SortedExamen = SortedExamen.Where(x => x.Student.Surname_Student.ToLower().Contains(SearchTb.Text.ToLower()));
             }
+            
+            ExamenList.ItemsSource = SortedExamen.ToList().Where(x => x.IsDeleted != Convert.ToBoolean(1));
 
-            ExamenList.ItemsSource = SortedExamen.ToList();
         }
 
         private void SortList_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -75,7 +78,24 @@ namespace UchebnayaPraktikaNiyaz.Pages
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            new ExamenWindow().ShowDialog();
+            var examen = new Examen();
+            NavigationService.Navigate(new AddEditExamenPage(examen));
+        }
+
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var examen = (Examen)ExamenList.SelectedItem;
+            examen.IsDeleted = Convert.ToBoolean(1);
+            Refresh();
+            App.db.SaveChanges();
+        }
+
+        private void RedaktBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var examen = (Examen)ExamenList.SelectedItem;
+            if (examen == null) 
+                MessageBox.Show("Для редактирования выберите данные!");
+            NavigationService.Navigate(new AddEditExamenPage(examen));
         }
     }
 }

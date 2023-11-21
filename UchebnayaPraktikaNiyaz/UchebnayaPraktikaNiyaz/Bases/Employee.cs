@@ -29,9 +29,9 @@ namespace UchebnayaPraktikaNiyaz.Bases
         public Nullable<int> Stage { get; set; }
         public Nullable<bool> IsDeleted { get; set; }
     
-        public virtual Position Position { get; set; }
         public virtual Lectern Lectern { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Examen> Examen { get; set; }
+        public virtual Position Position { get; set; }
     }
 }

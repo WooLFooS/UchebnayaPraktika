@@ -21,7 +21,7 @@ namespace UchebnayaPraktikaNiyaz.Bases
         }
     
         public int Id_degree { get; set; }
-        public string Degree1 { get; set; }
+        public string Degree_Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Position> Position { get; set; }

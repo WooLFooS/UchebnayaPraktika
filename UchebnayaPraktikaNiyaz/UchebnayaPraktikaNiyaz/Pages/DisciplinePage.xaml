@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:UchebnayaPraktikaNiyaz.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="1000"
       Title="DisciplinePage">
 
     <Grid>
@@ -33,18 +33,19 @@
                 <Label Content="Поиск" FontFamily="ArialBlack" FontSize="15" Width="70"/>
                 <TextBox Width="120" x:Name="SearchTb" TextChanged="SearchTb_TextChanged"></TextBox>
             </StackPanel>
-            <Button x:Name="AddBtn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="30" Margin="30,0,0,0" Content="Добавить" Click="AddBtn_Click"></Button>
+            <Button x:Name="AddBtn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="110" Height="30" Margin="5,0,5,0" Content="Добавить" Click="AddBtn_Click"></Button>
+            <Button x:Name="DeleteBtn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="110" Height="30" Content="Удалить" Margin="0 0 5 0" Click="DeleteBtn_Click"></Button>
+            <Button x:Name="RedaktBtn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="130" Height="30" Content="Редактировать" Click="RedaktBtn_Click"></Button>
         </StackPanel>
         <StackPanel  Grid.Row="1">
             <ListView Background="#F7F7F7" x:Name="DisciplineList" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="350">
                 <ListView.View>
                     <GridView>
                         <GridView.Columns>
-                            <GridViewColumn Header="№" DisplayMemberBinding="{Binding Id_Subject}" x:Name="IdColumn" Width="100"></GridViewColumn>
-                            <GridViewColumn Header="Факультет" DisplayMemberBinding="{Binding Lectern.Faculty.Name_Faculty}" x:Name="FacultyColumn" Width="270"></GridViewColumn>
-                            <GridViewColumn Header="Кафедра" DisplayMemberBinding="{Binding  Lectern.Name_Lectern}" x:Name="KafedraColumn" Width="270"></GridViewColumn>
-                            <GridViewColumn Header="Дисциплина" DisplayMemberBinding="{Binding Name_Subject}" x:Name="TeacherColumn" Width="180"></GridViewColumn>
-                            <GridViewColumn Header="Объем" DisplayMemberBinding="{Binding Cize_Subject}" x:Name="EmplColumn" Width="150"></GridViewColumn>
+                            <GridViewColumn Header="№" DisplayMemberBinding="{Binding Id_Subject}" x:Name="IdColumn" Width="200"></GridViewColumn>
+                            <GridViewColumn Header="Кафедра" DisplayMemberBinding="{Binding  Lectern.Name_Lectern}" x:Name="KafedraColumn" Width="277"></GridViewColumn>
+                            <GridViewColumn Header="Дисциплина" DisplayMemberBinding="{Binding Name_Subject}" x:Name="TeacherColumn" Width="250"></GridViewColumn>
+                            <GridViewColumn Header="Объем" DisplayMemberBinding="{Binding Cize_Subject}" x:Name="EmplColumn" Width="250"></GridViewColumn>
                         </GridView.Columns>
                     </GridView>
                 </ListView.View>

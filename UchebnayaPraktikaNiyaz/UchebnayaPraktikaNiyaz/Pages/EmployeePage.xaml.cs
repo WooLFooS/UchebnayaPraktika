@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using UchebnayaPraktikaNiyaz.Bases;
 using UchebnayaPraktikaNiyaz.Windows;
 
+
 namespace UchebnayaPraktikaNiyaz.Pages
 {
     /// <summary>
@@ -25,7 +26,7 @@ namespace UchebnayaPraktikaNiyaz.Pages
         public EmployeePage()
         {
             InitializeComponent();
-            EmployeeList.ItemsSource = App.db.Employee.ToList();
+            Refresh();
             if (!App.isAdmin)
             {
                 AddBtn.Visibility = Visibility.Hidden;
@@ -57,7 +58,7 @@ namespace UchebnayaPraktikaNiyaz.Pages
                 SortedEmployee = SortedEmployee.Where(x => x.Surname.ToLower().Contains(SearchTb.Text.ToLower()));
             }
 
-            EmployeeList.ItemsSource = SortedEmployee.ToList();
+            EmployeeList.ItemsSource = SortedEmployee.ToList().Where(x => x.IsDeleted != Convert.ToBoolean(1)); ;
         }
         private void SortList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -76,7 +77,30 @@ namespace UchebnayaPraktikaNiyaz.Pages
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            new EmployeeWindow().ShowDialog();
+            var employee = new Employee();
+            NavigationService.Navigate(new AddEditEmployeePage(employee, "add"));
+        }
+
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var employee = (Employee)EmployeeList.SelectedItem;
+            if (employee.Chief != employee.Id_Employee)
+            {
+                employee.IsDeleted = Convert.ToBoolean(1);
+                Refresh();
+                App.db.SaveChanges();
+            }
+            else
+                MessageBox.Show("Вы не можете удалять другого админа");
+        }
+
+        private void RedaktBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var employee = (Employee)EmployeeList.SelectedItem;
+            if (employee == null)
+                MessageBox.Show("Для редактирования выберите данные!");
+            else
+                NavigationService.Navigate(new AddEditEmployeePage(employee, "redact"));
         }
     }
 }
