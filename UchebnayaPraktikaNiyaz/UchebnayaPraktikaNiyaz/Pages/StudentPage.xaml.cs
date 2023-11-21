@@ -87,7 +87,7 @@ namespace UchebnayaPraktikaNiyaz.Pages
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            new StudentWindow().ShowDialog();
+            NavigationService.Navigate(new AddEditStudentPage(new Student(), "add"));
         }
 
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
@@ -101,7 +101,7 @@ namespace UchebnayaPraktikaNiyaz.Pages
         private void RedaktBtn_Click(object sender, RoutedEventArgs e)
         {
             var student = (Student)StudentList.SelectedItem;
-            new StudentWindow().ShowDialog();
+            NavigationService.Navigate(new AddEditStudentPage(student, "redact"));
         }
     }
 }
