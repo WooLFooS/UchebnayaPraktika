@@ -14,7 +14,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using UchebnayaPraktikaNiyaz.Bases;
-using UchebnayaPraktikaNiyaz.Windows;
 
 namespace UchebnayaPraktikaNiyaz.Pages
 {
