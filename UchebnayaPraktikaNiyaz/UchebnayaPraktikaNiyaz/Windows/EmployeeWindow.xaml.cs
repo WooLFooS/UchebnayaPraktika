@@ -38,7 +38,10 @@ namespace UchebnayaPraktikaNiyaz.Windows
             employee.Surname = FIOTb.Text;
             employee.Id_Lectern = KodKafTb.Text;
             employee.Salary = Convert.ToDecimal(OkladTb.Text);
-            App.db.
+            App.db.Employee.Add(employee);
+            App.db.SaveChanges();
+            this.Close();
+            App.emp.EmployeeList.ItemsSource = App.db.Employee.ToList();
         }
     }
 }

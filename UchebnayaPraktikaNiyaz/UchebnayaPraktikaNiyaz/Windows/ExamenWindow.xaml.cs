@@ -46,7 +46,7 @@ namespace UchebnayaPraktikaNiyaz.Windows
             App.db.Examen.Add(examen);
             App.db.SaveChanges();
             this.Close();
-            App.sp.StudentList.ItemsSource = App.db.Student.ToList();
+            App.em.ExamenList.ItemsSource = App.db.Examen.ToList();
         }
     }
 }

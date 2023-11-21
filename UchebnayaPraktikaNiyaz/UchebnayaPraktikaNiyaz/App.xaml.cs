@@ -21,5 +21,7 @@ namespace UchebnayaPraktikaNiyaz
         public static bool isStudent = false;
         public static bool isPrepodovatel = false;
         public static StudentPage sp = new StudentPage();
+        public static ExamenPage em = new ExamenPage();
+        public static EmployeePage emp = new EmployeePage();
     }
 }
