@@ -28,7 +28,7 @@ namespace UchebnayaPraktikaNiyaz.Pages
         public StudentPage()
         {
             InitializeComponent();
-            StudentList.ItemsSource = App.db.Examen.ToList();
+            StudentList.ItemsSource = App.db.Student.ToList();
             if(!App.isAdmin)
             {
                 AddBtn.Visibility = Visibility.Hidden;
@@ -38,28 +38,30 @@ namespace UchebnayaPraktikaNiyaz.Pages
 
         private void Refresh()
         {
-            IEnumerable<Examen> SortedStudent = App.db.Examen;
-            if(SortList.SelectedIndex == 0)
+            IEnumerable<Student> SortedStudent = App.db.Student;
+            if (SortList.SelectedIndex == 0)
             {
-                SortedStudent = SortedStudent.OrderBy(x => x.Mark);
+                SortedStudent = SortedStudent.OrderBy(x => x.Surname_Student);
             }
             else if(SortList.SelectedIndex == 1)
             {
-                SortedStudent = SortedStudent.OrderByDescending(x => x.Mark);
+                SortedStudent = SortedStudent.OrderByDescending(x => x.Surname_Student);
             }
 
             if (FiltrList.SelectedIndex == 0)
-                SortedStudent = SortedStudent.Where(x => x.Mark == 5);
+                SortedStudent = SortedStudent.Where(x => x.Specs.Direction == "Прикладная математика");
             if (FiltrList.SelectedIndex == 1)
-                SortedStudent = SortedStudent.Where(x => x.Mark == 4);
+                SortedStudent = SortedStudent.Where(x => x.Specs.Direction == "Информационные системы и технологии");
             if (FiltrList.SelectedIndex == 2)
-                SortedStudent = SortedStudent.Where(x => x.Mark == 3);
+                SortedStudent = SortedStudent.Where(x => x.Specs.Direction == "Прикладная информатика");
             if (FiltrList.SelectedIndex == 3)
-                SortedStudent = SortedStudent.Where(x => x.Mark == 2);
+                SortedStudent = SortedStudent.Where(x => x.Specs.Direction == "Ядерные физика и технологии");
+            if (FiltrList.SelectedIndex == 4)
+                SortedStudent = SortedStudent.Where(x => x.Specs.Direction == "Бизнес-информатика");
 
             if(SearchTb.Text != null)
             {
-                SortedStudent = SortedStudent.Where(x => x.Student.Surname_Student.ToLower().Contains(SearchTb.Text.ToLower()));
+                SortedStudent = SortedStudent.Where(x => x.Surname_Student.ToLower().Contains(SearchTb.Text.ToLower()));
             }
 
             StudentList.ItemsSource = SortedStudent.ToList();
@@ -90,6 +92,10 @@ namespace UchebnayaPraktikaNiyaz.Pages
             
         }
 
-        
+        private void RedaktBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var student = (Student)StudentList.SelectedItem;
+            new StudentWindow().ShowDialog();
+        }
     }
 }

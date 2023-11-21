@@ -24,18 +24,20 @@
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                 <Label Content="Оценки" FontFamily="ArialBlack" FontSize="15" Width="70" HorizontalAlignment="Left"></Label>
                 <ComboBox Width="120" x:Name="FiltrList" SelectionChanged="FiltrList_SelectionChanged">
-                    <ComboBoxItem Content="5"></ComboBoxItem>
-                    <ComboBoxItem Content="4"></ComboBoxItem>
-                    <ComboBoxItem Content="3"></ComboBoxItem>
-                    <ComboBoxItem Content="2"></ComboBoxItem>
+                    <ComboBoxItem Content="Прикладная математика"></ComboBoxItem>
+                    <ComboBoxItem Content="Информационные системы и технологии"></ComboBoxItem>
+                    <ComboBoxItem Content="Прикладная информатика"></ComboBoxItem>
+                    <ComboBoxItem Content="Ядерные физика и технологии"></ComboBoxItem>
+                    <ComboBoxItem Content="Бизнес-информатика"></ComboBoxItem>
                 </ComboBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                 <Label Content="Поиск" FontFamily="ArialBlack" FontSize="15" Width="70"/>
                 <TextBox Width="120" x:Name="SearchTb" TextChanged="SearchTb_TextChanged"></TextBox>
             </StackPanel>
-            <Button x:Name="AddBtn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="30" Margin="30,0,30,0" Content="Добавить" Click="AddBtn_Click"></Button>
-            <Button x:Name="DeleteBtn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="30" Content="Удалить" Click="DeleteBtn_Click"></Button>
+            <Button x:Name="AddBtn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="30" Margin="10,0,10,0" Content="Добавить" Click="AddBtn_Click"></Button>
+            <Button x:Name="DeleteBtn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="30" Content="Удалить" Click="DeleteBtn_Click" Margin="0 0 10 0"></Button>
+            <Button x:Name="RedaktBtn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="130" Height="30" Content="Редактировать" Click="RedaktBtn_Click"></Button>
         </StackPanel>
         <StackPanel Grid.Row="1">
             <ListView x:Name="StudentList" Background="#F7F7F7" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="350">
@@ -43,10 +45,8 @@
                     <GridView>
                         <GridView.Columns>
                             <GridViewColumn DisplayMemberBinding="{Binding Id_Student}" Header="ID Студента" Width="150"></GridViewColumn>
-                            <GridViewColumn DisplayMemberBinding="{Binding Student.Surname_Student}" Header="ФИО Студента" Width="250"></GridViewColumn>
-                            <GridViewColumn DisplayMemberBinding="{Binding Subject.Name_Subject}" Header="Предмет" Width="250"></GridViewColumn>
-                            <GridViewColumn DisplayMemberBinding="{Binding Mark}" Header="Оценка" Width="120"></GridViewColumn>
-                            <GridViewColumn DisplayMemberBinding="{Binding Date_Examen}" Header="Дата экзамена" Width="190"></GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Specs.Direction}" Header="Специальность" Width="250"></GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Surname_Student}" Header="ФИО Студента" Width="250"></GridViewColumn>
                         </GridView.Columns>
                     </GridView>
                 </ListView.View>

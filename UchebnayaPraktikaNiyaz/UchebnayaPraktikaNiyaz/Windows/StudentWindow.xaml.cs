@@ -35,6 +35,9 @@ namespace UchebnayaPraktikaNiyaz.Windows
             App.db.SaveChanges();
             this.Close();
             App.sp.StudentList.ItemsSource = App.db.Student.ToList();
+
+
+
         }
     }
 }
