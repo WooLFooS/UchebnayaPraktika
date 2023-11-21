@@ -17,7 +17,6 @@ namespace UchebnayaPraktikaNiyaz.Bases
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Employee()
         {
-            this.Employee1 = new HashSet<Employee>();
             this.Examen = new HashSet<Examen>();
         }
     
@@ -31,9 +30,6 @@ namespace UchebnayaPraktikaNiyaz.Bases
         public Nullable<bool> IsDeleted { get; set; }
     
         public virtual Position Position { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Employee> Employee1 { get; set; }
-        public virtual Employee Employee2 { get; set; }
         public virtual Lectern Lectern { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Examen> Examen { get; set; }

@@ -16,12 +16,13 @@ namespace UchebnayaPraktikaNiyaz
     /// </summary>
     public partial class App : Application
     {
-        public static UchebnayaPraktikaNiyazEntities db = new UchebnayaPraktikaNiyazEntities();
+        public static UchebnayaPraktikaNiyaz1Entities db = new UchebnayaPraktikaNiyaz1Entities();
         public static bool isAdmin = false;
         public static bool isStudent = false;
         public static bool isPrepodovatel = false;
         public static StudentPage sp = new StudentPage();
         public static ExamenPage em = new ExamenPage();
         public static EmployeePage emp = new EmployeePage();
+        public static DisciplinePage dp = new DisciplinePage();
     }
 }

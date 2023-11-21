@@ -27,7 +27,7 @@ namespace UchebnayaPraktikaNiyaz.Windows
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
             Examen examen = new Examen();
-            examen.Student.Id_Student = Convert.ToInt32(KodStudentTb.Text);
+            examen.Id_Student = Convert.ToInt32(KodStudentTb.Text);
             examen.Id_Subject = Convert.ToInt32(DisciplineTb.Text);
             examen.Id_Employee = Convert.ToInt32(PrepodTb.Text);
             examen.Date_Examen = Convert.ToDateTime(DateTb.Text);

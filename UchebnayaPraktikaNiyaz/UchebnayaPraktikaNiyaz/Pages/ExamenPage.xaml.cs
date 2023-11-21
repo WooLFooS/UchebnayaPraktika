@@ -75,7 +75,7 @@ namespace UchebnayaPraktikaNiyaz.Pages
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            new StudentWindow().ShowDialog();
+            new ExamenWindow().ShowDialog();
         }
     }
 }

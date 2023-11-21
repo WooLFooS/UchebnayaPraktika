@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,8 @@ namespace UchebnayaPraktikaNiyaz.Pages
     /// </summary>
     public partial class StudentPage : Page
     {
+ 
+
         public StudentPage()
         {
             InitializeComponent();
@@ -81,5 +84,12 @@ namespace UchebnayaPraktikaNiyaz.Pages
         {
             new StudentWindow().ShowDialog();
         }
+
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        
     }
 }

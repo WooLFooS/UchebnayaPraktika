@@ -28,13 +28,6 @@ namespace UchebnayaPraktikaNiyaz.Windows
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
             Employee employee = new Employee();
-            employee.Id_Employee = Convert.ToInt32(KodSotrTb.Text);
-            int rNumber = int.Parse(KodSotrTb.Text);
-            if (App.db.Employee.Where(x => x.Id_Employee == rNumber).FirstOrDefault() != null)
-            {
-                MessageBox.Show("Такой код уже существует");
-                return;
-            }
             employee.Surname = FIOTb.Text;
             employee.Id_Lectern = KodKafTb.Text;
             employee.Salary = Convert.ToDecimal(OkladTb.Text);

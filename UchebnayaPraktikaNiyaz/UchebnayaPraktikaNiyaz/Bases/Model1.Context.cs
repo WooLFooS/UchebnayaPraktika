@@ -13,10 +13,10 @@ namespace UchebnayaPraktikaNiyaz.Bases
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class UchebnayaPraktikaNiyazEntities : DbContext
+    public partial class UchebnayaPraktikaNiyaz1Entities : DbContext
     {
-        public UchebnayaPraktikaNiyazEntities()
-            : base("name=UchebnayaPraktikaNiyazEntities")
+        public UchebnayaPraktikaNiyaz1Entities()
+            : base("name=UchebnayaPraktikaNiyaz1Entities")
         {
         }
     

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using UchebnayaPraktikaNiyaz.Bases;
+using UchebnayaPraktikaNiyaz.Windows;
 
 namespace UchebnayaPraktikaNiyaz.Pages
 {
@@ -75,7 +76,7 @@ namespace UchebnayaPraktikaNiyaz.Pages
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            new DisciplineWindow().ShowDialog();
         }
     }
 }

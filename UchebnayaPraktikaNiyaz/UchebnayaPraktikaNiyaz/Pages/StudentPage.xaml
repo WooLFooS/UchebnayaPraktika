@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:UchebnayaPraktikaNiyaz.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="1000"
       Title="StudentPage">
 
     <Grid>
@@ -34,7 +34,8 @@
                 <Label Content="Поиск" FontFamily="ArialBlack" FontSize="15" Width="70"/>
                 <TextBox Width="120" x:Name="SearchTb" TextChanged="SearchTb_TextChanged"></TextBox>
             </StackPanel>
-            <Button x:Name="AddBtn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="30" Margin="30,0,0,0" Content="Добавить"></Button>
+            <Button x:Name="AddBtn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="30" Margin="30,0,30,0" Content="Добавить" Click="AddBtn_Click"></Button>
+            <Button x:Name="DeleteBtn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="30" Content="Удалить" Click="DeleteBtn_Click"></Button>
         </StackPanel>
         <StackPanel Grid.Row="1">
             <ListView x:Name="StudentList" Background="#F7F7F7" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="350">

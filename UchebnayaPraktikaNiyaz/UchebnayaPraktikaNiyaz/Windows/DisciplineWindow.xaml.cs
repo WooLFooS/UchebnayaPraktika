@@ -12,29 +12,32 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using UchebnayaPraktikaNiyaz.Bases;
+using UchebnayaPraktikaNiyaz.Pages;
 
 namespace UchebnayaPraktikaNiyaz.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для StudentWindow.xaml
+    /// Логика взаимодействия для DisciplineWindow.xaml
     /// </summary>
-    public partial class StudentWindow : Window
+    public partial class DisciplineWindow : Window
     {
-        public StudentWindow()
+        public DisciplineWindow()
         {
             InitializeComponent();
         }
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-            Student student = new Student();
-            student.Surname_Student = FIOTb.Text;
-            student.Id_Spec = KodSpecTb.Text;
-            student.IsDeleted = true;
-            App.db.Student.Add(student);
+            Subject discipline = new Subject();
+
+            discipline.Cize_Subject = Convert.ToInt32(ObemTb.Text);
+            discipline.Name_Subject = NazvanieTb.Text;
+            discipline.Id_Lectern = KodKafedraTb.Text;
+
+            App.db.Subject.Add(discipline);
             App.db.SaveChanges();
             this.Close();
-            App.sp.StudentList.ItemsSource = App.db.Student.ToList();
+            App.dp.DisciplineList.ItemsSource = App.db.Subject.ToList();
         }
     }
 }

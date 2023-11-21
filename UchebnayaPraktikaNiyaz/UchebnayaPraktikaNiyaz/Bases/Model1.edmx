@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище UchebnayaPraktikaNiyazModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище UchebnayaPraktikaNiyaz1Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Degree">
           <Key>
             <PropertyRef Name="Id_degree" />
@@ -16,7 +16,7 @@
           <Key>
             <PropertyRef Name="Id_Employee" />
           </Key>
-          <Property Name="Id_Employee" Type="int" Nullable="false" />
+          <Property Name="Id_Employee" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Id_Lectern" Type="nvarchar" MaxLength="2" />
           <Property Name="Surname" Type="nvarchar" MaxLength="50" />
           <Property Name="Id_Position" Type="int" />
@@ -27,8 +27,7 @@
         </EntityType>
         <EntityType Name="Examen">
           <Key>
-            <PropertyRef Name="Date_Examen" />
-            <PropertyRef Name="Id_Student" />
+            <PropertyRef Name="Id_Examen" />
           </Key>
           <Property Name="Date_Examen" Type="date" Nullable="false" />
           <Property Name="Id_Subject" Type="int" />
@@ -36,6 +35,7 @@
           <Property Name="Id_Employee" Type="int" />
           <Property Name="Auditory" Type="nvarchar" MaxLength="10" />
           <Property Name="Mark" Type="int" />
+          <Property Name="Id_Examen" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="Faculty">
           <Key>
@@ -56,7 +56,7 @@
           <Key>
             <PropertyRef Name="Id_Position" />
           </Key>
-          <Property Name="Id_Position" Type="int" Nullable="false" />
+          <Property Name="Id_Position" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Position" Type="nvarchar(max)" />
           <Property Name="Id_Degree" Type="int" />
         </EntityType>
@@ -80,7 +80,7 @@
           <Key>
             <PropertyRef Name="Id_Student" />
           </Key>
-          <Property Name="Id_Student" Type="int" Nullable="false" />
+          <Property Name="Id_Student" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Id_Spec" Type="nvarchar" MaxLength="8" />
           <Property Name="Surname_Student" Type="nvarchar" MaxLength="50" />
           <Property Name="IsDeleted" Type="bit" />
@@ -89,7 +89,7 @@
           <Key>
             <PropertyRef Name="Id_Subject" />
           </Key>
-          <Property Name="Id_Subject" Type="int" Nullable="false" />
+          <Property Name="Id_Subject" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Cize_Subject" Type="int" />
           <Property Name="Name_Subject" Type="nvarchar" MaxLength="30" />
           <Property Name="Id_Lectern" Type="nvarchar" MaxLength="2" />
@@ -114,18 +114,6 @@
             </Principal>
             <Dependent Role="Employee">
               <PropertyRef Name="Id_Position" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Employee_To_Chief">
-          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
-          <End Role="Employee1" Type="Self.Employee" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Employee">
-              <PropertyRef Name="Id_Employee" />
-            </Principal>
-            <Dependent Role="Employee1">
-              <PropertyRef Name="Chief" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -261,7 +249,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище UchebnayaPraktikaNiyazModelContainer">
+        <EntityContainer Name="Хранилище UchebnayaPraktikaNiyaz1ModelContainer">
           <EntitySet Name="Degree" EntityType="Self.Degree" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Examen" EntityType="Self.Examen" Schema="dbo" store:Type="Tables" />
@@ -276,10 +264,6 @@
           <AssociationSet Name="FK_Employee_Position" Association="Self.FK_Employee_Position">
             <End Role="Position" EntitySet="Position" />
             <End Role="Employee" EntitySet="Employee" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Employee_To_Chief" Association="Self.FK_Employee_To_Chief">
-            <End Role="Employee" EntitySet="Employee" />
-            <End Role="Employee1" EntitySet="Employee" />
           </AssociationSet>
           <AssociationSet Name="FK_Employee_To_Lectern" Association="Self.FK_Employee_To_Lectern">
             <End Role="Lectern" EntitySet="Lectern" />
@@ -330,7 +314,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="UchebnayaPraktikaNiyazModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="UchebnayaPraktikaNiyaz1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Degree">
           <Key>
             <PropertyRef Name="Id_degree" />
@@ -343,7 +327,7 @@
           <Key>
             <PropertyRef Name="Id_Employee" />
           </Key>
-          <Property Name="Id_Employee" Type="Int32" Nullable="false" />
+          <Property Name="Id_Employee" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Id_Lectern" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
           <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Id_Position" Type="Int32" />
@@ -352,15 +336,12 @@
           <Property Name="Stage" Type="Int32" />
           <Property Name="IsDeleted" Type="Boolean" />
           <NavigationProperty Name="Position" Relationship="Self.FK_Employee_Position" FromRole="Employee" ToRole="Position" />
-          <NavigationProperty Name="Employee1" Relationship="Self.FK_Employee_To_Chief" FromRole="Employee" ToRole="Employee1" />
-          <NavigationProperty Name="Employee2" Relationship="Self.FK_Employee_To_Chief" FromRole="Employee1" ToRole="Employee" />
           <NavigationProperty Name="Lectern" Relationship="Self.FK_Employee_To_Lectern" FromRole="Employee" ToRole="Lectern" />
           <NavigationProperty Name="Examen" Relationship="Self.FK_Exam_To_Employee" FromRole="Employee" ToRole="Examen" />
         </EntityType>
         <EntityType Name="Examen">
           <Key>
-            <PropertyRef Name="Date_Examen" />
-            <PropertyRef Name="Id_Student" />
+            <PropertyRef Name="Id_Examen" />
           </Key>
           <Property Name="Date_Examen" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Id_Subject" Type="Int32" />
@@ -368,6 +349,7 @@
           <Property Name="Id_Employee" Type="Int32" />
           <Property Name="Auditory" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Mark" Type="Int32" />
+          <Property Name="Id_Examen" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Employee" Relationship="Self.FK_Exam_To_Employee" FromRole="Examen" ToRole="Employee" />
           <NavigationProperty Name="Student" Relationship="Self.FK_Exam_To_Student" FromRole="Examen" ToRole="Student" />
           <NavigationProperty Name="Subject" Relationship="Self.FK_Exam_To_Subject" FromRole="Examen" ToRole="Subject" />
@@ -396,7 +378,7 @@
           <Key>
             <PropertyRef Name="Id_Position" />
           </Key>
-          <Property Name="Id_Position" Type="Int32" Nullable="false" />
+          <Property Name="Id_Position" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Position1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Id_Degree" Type="Int32" />
           <NavigationProperty Name="Degree" Relationship="Self.FK_Position_Degree" FromRole="Position" ToRole="Degree" />
@@ -417,7 +399,7 @@
           <Key>
             <PropertyRef Name="Id_Student" />
           </Key>
-          <Property Name="Id_Student" Type="Int32" Nullable="false" />
+          <Property Name="Id_Student" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Id_Spec" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
           <Property Name="Surname_Student" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="IsDeleted" Type="Boolean" />
@@ -428,7 +410,7 @@
           <Key>
             <PropertyRef Name="Id_Subject" />
           </Key>
-          <Property Name="Id_Subject" Type="Int32" Nullable="false" />
+          <Property Name="Id_Subject" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Cize_Subject" Type="Int32" />
           <Property Name="Name_Subject" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Id_Lectern" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
@@ -468,18 +450,6 @@
             </Principal>
             <Dependent Role="Employee">
               <PropertyRef Name="Id_Position" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Employee_To_Chief">
-          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
-          <End Role="Employee1" Type="Self.Employee" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Employee">
-              <PropertyRef Name="Id_Employee" />
-            </Principal>
-            <Dependent Role="Employee1">
-              <PropertyRef Name="Chief" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -583,7 +553,7 @@
           <End Role="Specs" Type="Self.Specs" Multiplicity="*" />
           <End Role="Subject" Type="Self.Subject" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="UchebnayaPraktikaNiyazEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="UchebnayaPraktikaNiyaz1Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Degree" EntityType="Self.Degree" />
           <EntitySet Name="Employee" EntityType="Self.Employee" />
           <EntitySet Name="Examen" EntityType="Self.Examen" />
@@ -601,10 +571,6 @@
           <AssociationSet Name="FK_Employee_Position" Association="Self.FK_Employee_Position">
             <End Role="Position" EntitySet="Position" />
             <End Role="Employee" EntitySet="Employee" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Employee_To_Chief" Association="Self.FK_Employee_To_Chief">
-            <End Role="Employee" EntitySet="Employee" />
-            <End Role="Employee1" EntitySet="Employee" />
           </AssociationSet>
           <AssociationSet Name="FK_Employee_To_Lectern" Association="Self.FK_Employee_To_Lectern">
             <End Role="Lectern" EntitySet="Lectern" />
@@ -648,9 +614,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище UchebnayaPraktikaNiyazModelContainer" CdmEntityContainer="UchebnayaPraktikaNiyazEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище UchebnayaPraktikaNiyaz1ModelContainer" CdmEntityContainer="UchebnayaPraktikaNiyaz1Entities">
           <EntitySetMapping Name="Degree">
-            <EntityTypeMapping TypeName="UchebnayaPraktikaNiyazModel.Degree">
+            <EntityTypeMapping TypeName="UchebnayaPraktikaNiyaz1Model.Degree">
               <MappingFragment StoreEntitySet="Degree">
                 <ScalarProperty Name="Id_degree" ColumnName="Id_degree" />
                 <ScalarProperty Name="Degree1" ColumnName="Degree" />
@@ -658,7 +624,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Employee">
-            <EntityTypeMapping TypeName="UchebnayaPraktikaNiyazModel.Employee">
+            <EntityTypeMapping TypeName="UchebnayaPraktikaNiyaz1Model.Employee">
               <MappingFragment StoreEntitySet="Employee">
                 <ScalarProperty Name="Id_Employee" ColumnName="Id_Employee" />
                 <ScalarProperty Name="Id_Lectern" ColumnName="Id_Lectern" />
@@ -672,7 +638,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Examen">
-            <EntityTypeMapping TypeName="UchebnayaPraktikaNiyazModel.Examen">
+            <EntityTypeMapping TypeName="UchebnayaPraktikaNiyaz1Model.Examen">
               <MappingFragment StoreEntitySet="Examen">
                 <ScalarProperty Name="Date_Examen" ColumnName="Date_Examen" />
                 <ScalarProperty Name="Id_Subject" ColumnName="Id_Subject" />
@@ -680,11 +646,12 @@
                 <ScalarProperty Name="Id_Employee" ColumnName="Id_Employee" />
                 <ScalarProperty Name="Auditory" ColumnName="Auditory" />
                 <ScalarProperty Name="Mark" ColumnName="Mark" />
+                <ScalarProperty Name="Id_Examen" ColumnName="Id_Examen" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Faculty">
-            <EntityTypeMapping TypeName="UchebnayaPraktikaNiyazModel.Faculty">
+            <EntityTypeMapping TypeName="UchebnayaPraktikaNiyaz1Model.Faculty">
               <MappingFragment StoreEntitySet="Faculty">
                 <ScalarProperty Name="Id_Faculty" ColumnName="Id_Faculty" />
                 <ScalarProperty Name="Name_Faculty" ColumnName="Name_Faculty" />
@@ -692,7 +659,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Lectern">
-            <EntityTypeMapping TypeName="UchebnayaPraktikaNiyazModel.Lectern">
+            <EntityTypeMapping TypeName="UchebnayaPraktikaNiyaz1Model.Lectern">
               <MappingFragment StoreEntitySet="Lectern">
                 <ScalarProperty Name="Id_Lectern" ColumnName="Id_Lectern" />
                 <ScalarProperty Name="Name_Lectern" ColumnName="Name_Lectern" />
@@ -701,7 +668,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Position">
-            <EntityTypeMapping TypeName="UchebnayaPraktikaNiyazModel.Position">
+            <EntityTypeMapping TypeName="UchebnayaPraktikaNiyaz1Model.Position">
               <MappingFragment StoreEntitySet="Position">
                 <ScalarProperty Name="Id_Position" ColumnName="Id_Position" />
                 <ScalarProperty Name="Position1" ColumnName="Position" />
@@ -710,7 +677,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Specs">
-            <EntityTypeMapping TypeName="UchebnayaPraktikaNiyazModel.Specs">
+            <EntityTypeMapping TypeName="UchebnayaPraktikaNiyaz1Model.Specs">
               <MappingFragment StoreEntitySet="Specs">
                 <ScalarProperty Name="Id_Spec" ColumnName="Id_Spec" />
                 <ScalarProperty Name="Direction" ColumnName="Direction" />
@@ -719,7 +686,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Student">
-            <EntityTypeMapping TypeName="UchebnayaPraktikaNiyazModel.Student">
+            <EntityTypeMapping TypeName="UchebnayaPraktikaNiyaz1Model.Student">
               <MappingFragment StoreEntitySet="Student">
                 <ScalarProperty Name="Id_Student" ColumnName="Id_Student" />
                 <ScalarProperty Name="Id_Spec" ColumnName="Id_Spec" />
@@ -729,7 +696,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Subject">
-            <EntityTypeMapping TypeName="UchebnayaPraktikaNiyazModel.Subject">
+            <EntityTypeMapping TypeName="UchebnayaPraktikaNiyaz1Model.Subject">
               <MappingFragment StoreEntitySet="Subject">
                 <ScalarProperty Name="Id_Subject" ColumnName="Id_Subject" />
                 <ScalarProperty Name="Cize_Subject" ColumnName="Cize_Subject" />
@@ -740,7 +707,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="UchebnayaPraktikaNiyazModel.sysdiagrams">
+            <EntityTypeMapping TypeName="UchebnayaPraktikaNiyaz1Model.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -750,7 +717,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="Request" TypeName="UchebnayaPraktikaNiyazModel.Request" StoreEntitySet="Request">
+          <AssociationSetMapping Name="Request" TypeName="UchebnayaPraktikaNiyaz1Model.Request" StoreEntitySet="Request">
             <EndProperty Name="Specs">
               <ScalarProperty Name="Id_Spec" ColumnName="Id_Spec" />
             </EndProperty>
