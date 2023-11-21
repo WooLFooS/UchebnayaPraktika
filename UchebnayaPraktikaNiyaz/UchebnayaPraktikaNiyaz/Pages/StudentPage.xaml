@@ -22,7 +22,7 @@
                 </ComboBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                <Label Content="Оценки" FontFamily="ArialBlack" FontSize="15" Width="70" HorizontalAlignment="Left"></Label>
+                <Label Content="Спец" FontFamily="ArialBlack" FontSize="15" Width="70" HorizontalAlignment="Left"></Label>
                 <ComboBox Width="120" x:Name="FiltrList" SelectionChanged="FiltrList_SelectionChanged">
                     <ComboBoxItem Content="Прикладная математика"></ComboBoxItem>
                     <ComboBoxItem Content="Информационные системы и технологии"></ComboBoxItem>
