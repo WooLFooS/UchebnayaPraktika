@@ -110,9 +110,6 @@
     <Compile Include="Bases\Subject.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Bases\sysdiagrams.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Pages\AddEditDisciplinePage.xaml.cs">
       <DependentUpon>AddEditDisciplinePage.xaml</DependentUpon>
     </Compile>

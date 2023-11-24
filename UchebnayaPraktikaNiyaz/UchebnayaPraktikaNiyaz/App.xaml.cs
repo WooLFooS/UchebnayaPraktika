@@ -16,7 +16,7 @@ namespace UchebnayaPraktikaNiyaz
     /// </summary>
     public partial class App : Application
     {
-        public static UchebnayaPraktikaNiyaz1Entities1 db = new UchebnayaPraktikaNiyaz1Entities1();
+        public static UchebnayaPraktikaNiyaz2Entities db = new UchebnayaPraktikaNiyaz2Entities();
         public static bool isAdmin = false;
         public static bool isStudent = false;
         public static bool isPrepodovatel = false;
